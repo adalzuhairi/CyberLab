@@ -1,0 +1,20 @@
+# Terraform/OpenTofu
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+.terraform.lock.hcl
+
+# Secrets
+*.pem
+*.key
+*.pfx
+*.env
+*.secret
+
+# Ansible
+*.retry
+
+# Linux
+*.swp
+*~
