@@ -1,0 +1,7 @@
+---
+- name: Deploy Portainer
+  hosts: ubuntu02
+  become: true
+
+  roles:
+    - portainer

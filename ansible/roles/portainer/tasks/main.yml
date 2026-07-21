@@ -1,0 +1,21 @@
+---
+- name: Create Portainer directory
+  file:
+    path: /opt/docker/portainer
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Copy compose file
+  template:
+    src: compose.yml.j2
+    dest: /opt/docker/portainer/compose.yml
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Deploy Portainer
+  community.docker.docker_compose_v2:
+    project_src: /opt/docker/portainer
+    state: present
