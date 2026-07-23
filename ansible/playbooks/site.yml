@@ -1,0 +1,6 @@
+---
+- import_playbook: bootstrap.yml
+- import_playbook: docker.yml
+- import_playbook: network.yml
+- import_playbook: traefik.yml
+- import_playbook: portainer.yml

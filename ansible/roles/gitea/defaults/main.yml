@@ -1,0 +1,17 @@
+---
+gitea_dir: /opt/gitea
+
+gitea_image: docker.io/gitea/gitea:latest
+
+postgres_image: postgres:17
+
+gitea_hostname: git.lab.local
+
+postgres_db: gitea
+
+postgres_user: gitea
+
+postgres_password: ChangeMe123!
+
+gitea_uid: 1000
+gitea_gid: 1000

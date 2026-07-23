@@ -1,0 +1,9 @@
+---
+traefik_dir: /opt/docker/traefik
+
+traefik_http_port: 80
+traefik_https_port: 443
+
+traefik_dashboard_port: 8080
+
+traefik_version: latest

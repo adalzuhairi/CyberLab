@@ -1,0 +1,7 @@
+---
+- name: Deploy Gitea
+  hosts: ubuntu02
+  become: true
+
+  roles:
+    - gitea

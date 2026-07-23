@@ -1,0 +1,7 @@
+---
+- name: Deploy Traefik
+  hosts: ubuntu02
+  become: true
+
+  roles:
+    - traefik

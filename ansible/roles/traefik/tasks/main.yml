@@ -1,0 +1,16 @@
+---
+- name: Create Traefik directory
+  file:
+    path: "{{ traefik_dir }}"
+    state: directory
+    mode: "0755"
+
+- name: Copy compose
+  template:
+    src: compose.yml.j2
+    dest: "{{ traefik_dir }}/compose.yml"
+
+- name: Deploy Traefik
+  community.docker.docker_compose_v2:
+    project_src: "{{ traefik_dir }}"
+    state: present
