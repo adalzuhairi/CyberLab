@@ -1,0 +1,35 @@
+name: Hello DevOps
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show Docker version
+        run: docker version
+
+      - name: Build Docker image
+        run: |
+          docker build -t hello-devops:latest .
+
+      - name: Remove old container
+        run: |
+          docker rm -f hello-devops || true
+
+      - name: Start application
+        run: |
+          docker run -d \
+            --name hello-devops \
+            -p 8081:80 \
+            hello-devops:latest

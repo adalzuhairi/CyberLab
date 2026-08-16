@@ -1,0 +1,12 @@
+services:
+
+  hello-devops:
+
+    build: .
+
+    container_name: hello-devops
+
+    restart: unless-stopped
+
+    ports:
+      - "8081:80"

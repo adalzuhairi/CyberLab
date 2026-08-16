@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:17
+    container_name: cyberlab_db
+    restart: always
+    environment:
+      POSTGRES_DB: inventory
+      POSTGRES_USER: inventory
+      POSTGRES_PASSWORD: Inventory123!
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - cyberlab-net
+
+  backend:
+    build: ./backend
+    container_name: cyberlab_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - db
+    networks:
+      - cyberlab-net
+
+volumes:
+  postgres_data:
+
+networks:
+  cyberlab-net:
+    driver: bridge
