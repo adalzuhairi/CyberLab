@@ -1,0 +1,17 @@
+log:
+  level: debug
+
+runner:
+  file: .runner
+  capacity: 1
+  timeout: 3h
+
+cache:
+  enabled: true
+
+container:
+  network: proxy
+  privileged: true
+
+host:
+  workdir_parent: /tmp/act_runner

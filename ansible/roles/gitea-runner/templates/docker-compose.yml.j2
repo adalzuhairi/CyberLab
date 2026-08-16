@@ -1,0 +1,28 @@
+services:
+
+  runner:
+    image: {{ runner_image }}
+    container_name: gitea-runner
+
+    restart: unless-stopped
+
+    command: >
+      daemon
+      --config /data/config.yaml
+
+    environment:
+      GITEA_INSTANCE_URL: "{{ gitea_url }}"
+      GITEA_RUNNER_REGISTRATION_TOKEN: "{{ runner_token }}"
+      GITEA_RUNNER_NAME: "{{ runner_name }}"
+
+    volumes:
+      - ./data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+
+    networks:
+      - proxy
+
+networks:
+
+  proxy:
+    external: true

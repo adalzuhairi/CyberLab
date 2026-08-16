@@ -1,7 +1,7 @@
 ---
 gitea_dir: /opt/gitea
 
-gitea_image: docker.io/gitea/gitea:latest
+gitea_image: docker.gitea.com/gitea:1.25.1
 
 postgres_image: postgres:17
 

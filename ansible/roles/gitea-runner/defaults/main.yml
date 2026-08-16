@@ -1,0 +1,10 @@
+---
+runner_dir: /opt/gitea-runner
+
+runner_image: docker.gitea.com/runner-images/act_runner:0.2.11
+
+runner_name: cyberlab-runner
+
+gitea_url: http://gitea:3000
+
+runner_token: "ojBByjktiS2R0iQwuEQvmDx8lPhpsoQc7vs9BHha"
